@@ -1,0 +1,8 @@
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\ConsoleApplication8.exe.config
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\ConsoleApplication8.XML
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\ConsoleApplication8.exe
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\ConsoleApplication8.pdb
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\FSharp.Core.dll
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\bin\Debug\FSharp.Core.xml
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\obj\Debug\ConsoleApplication8.exe
+c:\users\iron\documents\visual studio 2013\Projects\chapter2\ConsoleApplication8\obj\Debug\ConsoleApplication8.pdb
