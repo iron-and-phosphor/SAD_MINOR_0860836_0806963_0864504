@@ -6,7 +6,7 @@ namespace Chapter5
     open System
 
     type Coroutine<'a> = Unit -> CoroutineStep<'a>
-    and CoroutineStep<'a> =
+    and CoroutineStep<'a> =  
       Return of 'a
       | Yield of Coroutine<'a>
       | ArrowYield of Coroutine<'a>

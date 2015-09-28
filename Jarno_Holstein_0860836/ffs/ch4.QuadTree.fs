@@ -13,7 +13,7 @@ for a in asteroids do
              yield force(a,a')
        ]
   ...
-
+    
 In the above snippet, we see that for each asteroid we check all other asteroids, for a grand total of n * n computations where n is the number of asteroids.
 For 200 asteroids we are talking about 200 * 200 computations, that is 40000 applications of the gravitational force.
 40000 is quite a large number for mathematical computations, and indeed the number of times per second we can afford to perform this computation is not very high.
@@ -99,20 +99,20 @@ namespace Chapter4
     *)
     let rec mk_empty (min_range:Range<_>) (range:Range<_>) =
       if min_range.Size.X < range.Size.X ||
-         min_range.Size.Y < range.Size.Y then
-         let size' = range.Size / 2.0
-         let range11 = { Min = range.Min; Size = size' }
-         let range12 = { Min = range.Min + { size' with Y = 0.0<_> }; Size = size' }
-         let range21 = { Min = range.Min + { size' with X = 0.0<_> }; Size = size' }
-         let range22 = { Min = range.Min + size'; Size = size' }
-         Node(range,
-              mk_empty min_range range11,
-              mk_empty min_range range12,
-              mk_empty min_range range21,
-              mk_empty min_range range22,
-              None)
-       else
-         Leaf(range,[],None)
+        min_range.Size.Y < range.Size.Y then
+        let size' = range.Size / 2.0
+        let range11 = { Min = range.Min; Size = size' }
+        let range12 = { Min = range.Min + { size' with Y = 0.0<_> }; Size = size' }
+        let range21 = { Min = range.Min + { size' with X = 0.0<_> }; Size = size' }
+        let range22 = { Min = range.Min + size'; Size = size' }
+        Node(range,
+             mk_empty min_range range11,
+             mk_empty min_range range12,
+             mk_empty min_range range21,
+             mk_empty min_range range22,
+             None)
+      else
+        Leaf(range,[],None)
 
     (*
     To insert an element a (of generic type 'a) into a tree we need a bit of information more, that is the position of a so that we can se which ranges it belongs to.

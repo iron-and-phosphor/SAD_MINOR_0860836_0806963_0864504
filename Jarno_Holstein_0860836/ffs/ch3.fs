@@ -81,9 +81,37 @@ module Chapter3
 
     
     let simulation_step (asteroids:Asteroid list) =
+      let vv = 
+        if(Console.KeyAvailable) then
+          let key_pressed = Console.ReadKey(true)
+          match key_pressed.Key with
+          |ConsoleKey.UpArrow -> -500.0<m/s>
+          |ConsoleKey.DownArrow -> 500.0<m/s>
+          | _ -> 0.0<m/s>
+        else 0.0<m/s>
+      
+      let vh = 
+        if(Console.KeyAvailable) then
+          let key_pressed = Console.ReadKey(true)
+          match key_pressed.Key with
+          |ConsoleKey.RightArrow -> 500.0<m/s>
+          |ConsoleKey.LeftArrow -> -500.0<m/s>
+          | _ -> 0.0<m/s>
+        else 0.0<m/s>                                 
+
+      let rec new_force (asteroids:Asteroid list) :Asteroid list =
+        match asteroids with
+        | x::xs -> 
+          {
+            Position = { X = x.Position.X ; Y = x.Position.Y }
+            Velocity = { X = x.Velocity.X + vh; Y = x.Velocity.Y + vv}
+            Mass     = x.Mass
+            Name     = x.Name
+          }:: new_force xs
+        |[] -> []       
       
       [
-        for a in asteroids do
+        for a in (new_force asteroids) do
           
           let forces =
                [
